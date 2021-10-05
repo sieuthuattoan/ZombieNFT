@@ -1,0 +1,5 @@
+{
+    "bracketPairColorizer.forceUniqueOpeningColor": true,
+    "bracketPairColorizer.forceIterationColorCycle": true,
+    "bracketPairColorizer.highlightActiveScope": true
+}
