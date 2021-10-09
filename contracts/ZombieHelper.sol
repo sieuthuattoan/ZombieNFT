@@ -12,6 +12,15 @@ contract ZombieHelper is ZombieFeeding {
     _;
   }
 
+  function withdraw() external onlyOwner {
+    address payable _owner = payable(owner()); //in sol ^0.8.0 address is not payable by default => need to convert it to payable
+    _owner.transfer(address(this).balance);//address(this) get the current address of the contract.
+  }
+
+  function setLevelUpFee(uint _fee) external onlyOwner {
+    levelUpFee = _fee;
+  }
+
   function levelUp(uint _zombieId) external payable{
     require(msg.value == levelUpFee);
     zombies[_zombieId].level++;
